@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event playground</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button onclick="alert('button clicked!!!'); alert('yay!!!')">Button 1</button>
+
+  <button id="v2">Button V2</button>
+  <button id="v3">Button V3</button>
+
+  <script>
+    // Option2
+    const btnV2 = document.querySelector('#v2');
+
+    const handleBtnClick = function() {
+      alert('button v2 clicked');
+    }
+
+    btnV2.onclick = handleBtnClick;
+
+    btnV2.onclick = function() {
+      alert('Some other work!');
+    }
+
+    // Option3
+    const btn3 = document.querySelector('#v3');
+    btn3.addEventListener('click', function() {
+      alert('button3 clicked');
+      // djsfjsdjf
+    });
+
+    btn3.addEventListener('click', function() {
+      alert('some other work');
+      //dsfj jfdjs
+    });
+
+    // btn3.addEventListener('mouseenter', function() {
+    //   console.log(`mouse enter button v3`);
+    // });
+
+  </script>
+</body>
+</html>

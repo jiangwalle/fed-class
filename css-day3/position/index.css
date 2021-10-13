@@ -1,0 +1,14 @@
+div {
+  width: 100px;
+  height: 100px;
+  background-color: #8ecae6;
+  margin: 10px;
+  display: inline-block;
+}
+
+div:nth-of-type(2) {
+  background-color: #ca6702;
+  position: sticky;
+  /* right: 20px; */
+  /* bottom: 30px; */
+}

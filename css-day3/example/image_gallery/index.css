@@ -1,0 +1,26 @@
+img {
+  width: 30%;
+  margin: 0;
+  margin: calc(10% / 6);
+  /* margin: 1.6666667%; */
+}
+
+.container {
+  font-size: 0;
+}
+
+.container img {
+  font-size: 1rem;
+}
+
+
+nav {
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-left: calc(10% / 6);
+  padding: 1rem 0;
+  width: 30%;
+  border-bottom: 2px solid #fb8500;
+}

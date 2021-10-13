@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const req = new XMLHttpRequest();
+    req.onload = function() {
+      console.log(`Request completed`);
+      console.log(JSON.parse(this.responseText));
+    }
+
+    req.onerror = function() {
+      console.log(`Request Error`);
+    }
+    req.open('GET', 'https://api.themoviedb.org/3/search/movie?api_key=71b734c9fe036fa5b36e3d80555e9e37&language=en-US&page=1&include_adult=false&query=iron%20man');
+    req.send();
+  </script>
+</body>
+</html>

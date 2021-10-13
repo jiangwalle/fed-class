@@ -1,0 +1,42 @@
+div {
+  width: 100px;
+  height: 100px;
+  background: pink;
+  margin-top: 10px;
+}
+#section1 div {
+  transition: all 1s 2s;
+}
+
+#section1 div:hover {
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+
+#section2 div {
+  width: 50px;
+  height: 50px;
+  background: green;
+  margin-top: 10px;
+  transition: margin-left 3s;
+}
+
+#section2:hover div {
+  margin-left: 500px;
+}
+
+#section2 div:nth-of-type(1) {
+  transition-timing-function: ease-in;
+}
+
+#section2 div:nth-of-type(2) {
+  transition-timing-function: ease-out;
+}
+
+#section2 div:nth-of-type(3) {
+  transition-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+#section2 div:nth-of-type(4) {
+  transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+}

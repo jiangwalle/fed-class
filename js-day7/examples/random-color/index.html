@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Exercise</title>
+</head>
+<body>
+  <h1>Click Me to Change Backgorund Color</h1>
+  <button>Random Theme</button>
+
+  <script>
+    const btn = document.querySelector('button');
+    const h1 = document.querySelector('h1');
+    btn.addEventListener('click', () => {
+      const newColor = generateRandomColor();
+      document.body.style.backgroundColor = newColor;
+      h1.innerHTML = newColor;
+    });
+
+    function generateRandomColor() {
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+  </script>
+</body>
+</html>

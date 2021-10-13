@@ -1,0 +1,54 @@
+div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #8ecae6;
+}
+
+div.middle {
+  background-color: #bdb2ff;
+}
+
+#static div {
+  display: inline-block;
+}
+
+#static div:nth-child(3) {
+  position: static;
+  left: 100px;
+  top: 100px;
+}
+
+#relative div {
+  display: inline-block;
+}
+
+#relative div:nth-child(3) {
+  position: relative;
+  left: 100px;
+  top: 100px;
+}
+
+#absolute {
+  position: relative;
+}
+
+#absolute div {
+  display: inline-block;
+}
+
+#absolute div:nth-child(3) {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+
+#fixed div {
+  display: inline-block;
+}
+
+#fixed div:nth-child(3) {
+  position: fixed;
+  right: 0;
+  top: 0;
+}

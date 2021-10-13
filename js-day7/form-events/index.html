@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form events</title>
+  <style>
+  </style>
+</head>
+<body>
+  
+  <form id="signupForm" action="/signup">
+    <input name="firstname" type="text" placeholder="Input firstname">
+    <input name="lastname" type="text" placeholder="Input lastname">
+    <button>submit</button>
+  </form>
+
+  <h3>User List</h3>
+  <ul id="userList">
+    <li>Iron Man</li>
+    <li>Spider Man</li>
+    <li>Hulk</li>
+  </ul>
+
+  <script>
+    const form = document.querySelector('#signupForm');
+    const userList = document.querySelector('#userList');
+
+    // const lis = document.querySelectorAll('li');
+    // for (let li of lis) {
+    //   li.addEventListener('click', e => {
+    //     li.remove();
+    //   });
+    // }
+
+    const ul = document.querySelector('ul');
+    ul.addEventListener('click', e => {
+      e.target.remove();
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const firstname = form.elements.firstname.value;
+      const lastname = form.elements.lastname.value;
+
+      const li = document.createElement('li');
+      li.innerText = `${firstname} ${lastname}`;
+      userList.append(li);
+
+      form.elements.firstname.value = '';
+      form.elements.lastname.value = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Event</title>
+
+  <style>
+    .error {
+      color: red;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <form id="signupForm" action="/signup">
+    <div class="error" id="errorMsg"></div>
+    <input name="firstname" placeholder="Input first name">
+    <input name="lastname" placeholder="Input last name">
+    <button>Submit</button>
+  </form>
+
+  <h2>Users: </h2>
+  <ul id="userList">
+    <li>Hello world</li>
+    <li>Read books</li>
+  </ul>
+
+  <script>
+    const form = document.querySelector('#signupForm');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      // const firstname = document.querySelector(`input[name='firstname']`);
+      // const lastname = document.querySelector(`input[name='lastname']`);
+
+      const errorContainer = document.querySelector('#errorMsg');
+      const firstname = form.elements.firstname;
+      const lastname = form.elements.lastname;
+      
+      if (firstname.value && lastname.value) {
+        const li = document.createElement('li');
+        li.innerText = `${firstname.value} ${lastname.value}`;
+        document.querySelector('#userList').append(li);
+
+        firstname.value = '';
+        lastname.value = '';
+        errorContainer.innerText = '';
+      } else {
+        errorContainer.innerText = 'Firstname and lastname are all required';
+      }
+    });
+
+    // const items = document.querySelectorAll('li');
+    // for (let item of items) {
+    //   item.addEventListener('click', () => {
+    //     item.remove();
+    //   });
+    // }
+
+    const userList = document.querySelector('#userList');
+    userList.addEventListener('click', e => {
+      e.target.remove();
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper"></div>
+  <script>
+    const request = new XMLHttpRequest();
+    let data;
+    const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
+
+    request.onload = function() {
+      console.log(`Yay, this api succeed`);
+      data = JSON.parse(this.response);
+
+      const wrapper = document.querySelector('.wrapper');
+      const titles = data.results.map(movie => movie.title);
+
+      for (let movie of data.results) {
+        const movieDiv = document.createElement('div');
+        movieDiv.innerHTML = `<b>${movie.title}</b>`;
+
+        const img = document.createElement('img');
+        img.src = `${imageBaseUrl}${movie.backdrop_path}`;
+
+        wrapper.append(movieDiv, img);
+      }
+    }
+
+    request.onerror = function() {
+      console.log(`Woops, api call failed`);
+    }
+
+    request.open('GET', 'https://api.themoviedb.org/3/movie/popular?api_key=71b734c9fe036fa5b36e3d80555e9e37&language=en-US&page=1');
+    request.send();
+  </script>
+</body>
+</html>

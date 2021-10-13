@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard events</title>
+  <style>
+    .container {
+      width: 70%;
+      height: 300px;
+      border: 1px solid green;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .object {
+      width: 10px;
+      height: 10px;
+      background: black;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="object" style="left: 100px; top: 100px;"></div>
+  </div>
+  <script>
+    const object = document.querySelector('.object');
+    let currentTop; // 100
+    let currentLeft; // 100
+
+    document.addEventListener('keydown', function(event) {
+      switch (event.code) {
+        case 'ArrowUp':
+          currentTop = parseInt(object.style.top);
+          object.style.top = `${currentTop - 10}px`;
+          break;
+        case 'ArrowDown':
+          currentTop = parseInt(object.style.top);
+          object.style.top = `${currentTop + 10}px`;
+          break;
+        case 'ArrowLeft':
+          currentLeft = parseInt(object.style.left);
+          object.style.left = `${currentLeft - 10}px`;
+          break;
+        case 'ArrowRight':
+          currentLeft = parseInt(object.style.left);
+          object.style.left = `${currentLeft + 10}px`;
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

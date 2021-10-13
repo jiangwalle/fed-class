@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Option 1
+    // function generateColor(r, g, b) {
+
+    //   const color = {};
+    //   color.r = r;
+    //   color.g = g;
+    //   color.b = b;
+
+    //   color.rgb = function() {
+    //     return `rgb(${r}, ${g}, ${b})`;
+    //   }
+
+    //   color.hex = function() {
+    //     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    //   }
+
+    //   color.rgba = function(a) {
+    //     return `rgba(${r}, ${g}, ${b}, ${a})`;
+    //   }
+      
+    //   return color;
+
+    // }
+
+
+    // Option 2
+    // const Color = function(r, g, b) {
+    //   this.r = r;
+    //   this.g = g;
+    //   this.b = b;
+    // }
+
+    // Color.prototype.rgb = function() {
+    //   return `rgb(${this.r}, ${this.g}, ${this.b})`;
+    // }
+
+    // Color.prototype.hex = function() {
+    //   const { r, g, b } = this;
+    //   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    // }
+
+    // Color.prototype.rgba = function(a) {
+    //   return `rgba(${r}, ${g}, ${b}, ${a})`;
+    // }
+
+    // let c1 = new Color(255, 0, 0);
+    // let c2 = new Color(100, 10, 30);
+
+
+    // Option 3
+    // class ColorClass {
+    //   constructor(r, g, b) {
+    //     console.log(`Hay, I'm in constructor!!!`);
+    //     this.r = r;
+    //     this.g = g;
+    //     this.b = b;
+    //   }
+
+    //   rgb() {
+    //     return `rgb(${this.r}, ${this.g}, ${this.b})`;
+    //   }
+
+    //   hex() {
+    //     const { r, g, b } = this;
+    //     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    //   }
+
+    //   rgba() {
+    //     const { r, g, b } = this;
+    //     return `rgba(${r}, ${g}, ${b}, ${a})`;
+    //   }
+    // }
+
+    // let c3 = new ColorClass(255, 0, 0);
+    // let c4 = new ColorClass(155, 200, 234);
+
+
+
+    // class Pet {
+    //   constructor(name, age, breed, weight) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.breed = breed;
+    //     this.weight = weight;
+    //   }
+
+    //   eat() {
+    //     console.log(`I'm eating!!!!!`);
+    //   }
+    // }
+
+    // class Dog extends Pet {
+    //   bark() {
+    //     console.log(`Walf, walf!`);
+    //   }
+    // }
+
+    // class Cat extends Pet {
+    //   meo() {
+    //     console.log(`Meo, meo!`);
+    //   }
+    // }
+
+    // let dog = new Dog('jack', 3, 'golden retriever', 10);
+    // let cat = new Cat('rose', 2, 'bosimao', 2);
+
+    
+  </script>
+</body>
+</html>

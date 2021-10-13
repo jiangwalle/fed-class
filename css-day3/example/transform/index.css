@@ -1,0 +1,27 @@
+#rotate div {
+  width: 100px;
+  background-color: pink;
+  padding: 10px 20px;
+  margin: 30px auto;
+}
+
+#rotate div:nth-of-type(1) {
+  transform: rotate(45deg);
+  /* transform-origin: top left; */
+}
+
+#rotate div:nth-of-type(2) {
+  transform: scale(1, 1.2);
+}
+
+#rotate div:nth-of-type(3) {
+  transform: translate(-40px, 10px);
+}
+
+#rotate div:nth-of-type(4) {
+  transform: skew(-30deg);
+}
+
+#rotate {
+  /* transform: translateX(-100px) rotate(45deg); */
+}
