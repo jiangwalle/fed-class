@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Callback examples
+    // 霓虹灯闪烁7种颜色，每个颜色持续一秒。
+    const changeBgColorAfter1Second = (color) => {
+      setTimeout(() => {
+        document.body.style.backgroundColor = color;
+      }, 1000);
+    }
+
+    // changeBgColorAfter1Second('red');
+    // changeBgColorAfter1Second('orange');
+    // changeBgColorAfter1Second('yellow');
+    // changeBgColorAfter1Second('green');
+    // changeBgColorAfter1Second('blue');
+    // changeBgColorAfter1Second('indigo');
+    // changeBgColorAfter1Second('violet');
+
+    // Promise version
+    // const changeBgColorAfter1SecondPromise = (color) => {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       document.body.style.backgroundColor = color;
+    //       resolve();
+    //     }, 1000);
+    //   })
+    // }
+
+    // changeBgColorAfter1SecondPromise('red')
+    //   .then(() => changeBgColorAfter1SecondPromise('orange'))
+    //   .then(() => changeBgColorAfter1SecondPromise('yellow'))
+    //   .then(() => changeBgColorAfter1SecondPromise('green'))
+    //   .then(() => changeBgColorAfter1SecondPromise('blue'))
+    //   .then(() => changeBgColorAfter1SecondPromise('indigo'))
+    //   .then(() => changeBgColorAfter1SecondPromise('violet'));
+
+
+
+    // How to create promise
+    const samplePromise = () => {
+      return new Promise((resolve, reject) => {
+        resolve('data');
+        // reject('something is wrong');
+      });
+    }
+
+
+    const fakeRequestCallback = (url, success, fail) => {
+      const delay = Math.floor(Math.random() * 4000);
+        console.log(`delay is: ${delay}`);
+        setTimeout(() => {
+          if (delay > 3000) {
+            fail(`API Error: connection timeout for request param ${url}.`);
+          } else {
+            success(`Server response fake data for request param ${url}.`);
+          }
+        }, delay);
+    }
+
+
+    const fakeRequestPromise = (url) => {
+      return new Promise((resolve, reject) => {
+        const delay = Math.floor(Math.random() * 4000);
+        console.log(`delay is: ${delay}`);
+        setTimeout(() => {
+          if (delay > 3000) {
+            reject('API Error: connection timeout for request param ${url}.');
+          } else {
+            resolve(`Server response fake data for request param ${url}.`);
+          }
+        }, delay);
+      });
+    }
+
+    // fakeRequestCallback('movie/page/1',
+    //   function (data) {
+    //     console.log(data);
+    //     fakeRequestCallback('movie/page/2',
+    //       function (data) {
+    //         console.log(data);
+    //         fakeRequestCallback('movie/page/3',
+    //           function(data) {
+    //             console.log(data);
+    //           },
+    //           function(error) {
+    //             console.log(error);
+    //           })
+    //       },
+    //       function (error) {
+    //         console.log(error);
+    //       });
+    //     },
+    //   function (error) {
+    //     console.log(error);
+    //   });
+
+    // fakeRequestPromise('/movie/page/1')
+    //   .then(data => {
+    //     console.log(data);
+    //     return fakeRequestPromise('/movie/page/2');
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //     return fakeRequestPromise('/movie/page/3');
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   })
+  </script>
+</body>
+</html>
