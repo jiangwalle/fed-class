@@ -8,3 +8,22 @@
 .button.primary {
   background-color: red;
 }
+
+.card {
+  width: 200px;
+  height: 250px;
+  border: 3px solid red;
+  margin: 10px;
+}
+
+.large {
+  padding: 10px;
+}
+
+.default {
+  padding: 5px;
+}
+
+.small {
+  padding: 0px;
+}
