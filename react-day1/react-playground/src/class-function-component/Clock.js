@@ -5,16 +5,23 @@ class Clock extends React.Component {
     super(props);
 
     this.state = {
-      now: new Date().toLocaleTimeString("en-US", { timeZone: this.props.timeZone })
+      now: new Date().toLocaleTimeString("en-US", { timeZone: props.timeZone })
     };
+  }
 
-    setInterval(() => {
+  componentDidMount() {
+    this.timer = setInterval(() => {
       this.setState({ now: new Date().toLocaleTimeString("en-US", { timeZone: this.props.timeZone }) });
     }, 1000);
   }
+  
+  componentWillUnmount() {
+    console.log(`Clear timer`);
+    clearInterval(this.timer);
+  }
 
   render() {
-    console.log(`==== Hay, i re rendered!!`);
+    console.log(`Rendering clock ${this.props.timeZone}`);
     return (
       <div>
         <span>Current time in {this.props.timeZone} is: {this.state.now}</span>

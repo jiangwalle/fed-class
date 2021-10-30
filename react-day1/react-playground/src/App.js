@@ -4,6 +4,10 @@ import StyleExample from "./style-example/StyleExample.js";
 import ButtonClassComponent from "./class-function-component/ButtonClassComponent.js";
 import ThemeEditor from "./class-function-component/ThemeEditor.js";
 import Clock from "./class-function-component/Clock.js";
+import WorldClock from "./class-function-component/WorldClocks.js";
+import LifeCycleExample from "./class-function-component/LifeCycleExample.js";
+import LifeCycleExampleDad from "./class-function-component/LifeCycleExampleDad.js";
+import EventExample from "./class-function-component/EventExample.js";
 
 function App() {
   const todos = ['Wath Movie', 'Walk dogs', 'Have dinner'];
@@ -31,8 +35,10 @@ function App() {
       <ButtonClassComponent>Button without size</ButtonClassComponent> */}
 
       {/* <ThemeEditor theme="light" /> */}
-      <Clock timeZone="Pacific/Auckland" />
-      <Clock timeZone="Asia/Shanghai" />
+      {/* <WorldClock /> */}
+      {/* <LifeCycleExample /> */}
+      {/* <LifeCycleExampleDad /> */}
+      <EventExample />
     </div>
   );
 }
