@@ -8,6 +8,8 @@ import WorldClock from "./class-function-component/WorldClocks.js";
 import LifeCycleExample from "./class-function-component/LifeCycleExample.js";
 import LifeCycleExampleDad from "./class-function-component/LifeCycleExampleDad.js";
 import EventExample from "./class-function-component/EventExample.js";
+import ListExample from "./list/ListExample.js";
+import FormExample from "./form/FormExample.js";
 
 function App() {
   const todos = ['Wath Movie', 'Walk dogs', 'Have dinner'];
@@ -38,7 +40,9 @@ function App() {
       {/* <WorldClock /> */}
       {/* <LifeCycleExample /> */}
       {/* <LifeCycleExampleDad /> */}
-      <EventExample />
+      {/* <EventExample /> */}
+      {/* <ListExample /> */}
+      <FormExample/>
     </div>
   );
 }
