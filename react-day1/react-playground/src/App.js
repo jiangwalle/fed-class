@@ -1,3 +1,4 @@
+import { Routes, Route, Link } from "react-router-dom";
 import TodoItem from "./components/TodoItem.js";
 import Card from './components/Card';
 import StyleExample from "./style-example/StyleExample.js";
@@ -10,9 +11,11 @@ import LifeCycleExampleDad from "./class-function-component/LifeCycleExampleDad.
 import EventExample from "./class-function-component/EventExample.js";
 import ListExample from "./list/ListExample.js";
 import FormExample from "./form/FormExample.js";
+import Exchange from "./CurrencyExachange/Exchange.js";
+import Container from "./routes-mock/Container.js";
 
 function App() {
-  const todos = ['Wath Movie', 'Walk dogs', 'Have dinner'];
+  // const todos = ['Wath Movie', 'Walk dogs', 'Have dinner'];
   return (
     <div>
       {/* <h1>Todo App</h1>
@@ -42,7 +45,21 @@ function App() {
       {/* <LifeCycleExampleDad /> */}
       {/* <EventExample /> */}
       {/* <ListExample /> */}
-      <FormExample/>
+      {/* <FormExample/> */}
+      {/* <Exchange /> */}
+      {/* <Container /> */}
+
+      <div className="navbar">
+        <Link to="/">Currency Exchange</Link>
+        <Link to="/about">Form Example</Link>
+        <Link to="/event">Event Example</Link>
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Exchange/>} />
+        <Route path="about" element={<FormExample/>} />
+        <Route path="event" element={<EventExample/>} />
+      </Routes>
     </div>
   );
 }
