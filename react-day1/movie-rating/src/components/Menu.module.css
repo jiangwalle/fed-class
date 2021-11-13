@@ -1,0 +1,16 @@
+.menu {
+  margin-right: 4rem;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 0 10px;
+  vertical-align: sub;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: lightblue;
+}

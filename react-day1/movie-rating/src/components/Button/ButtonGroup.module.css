@@ -1,0 +1,11 @@
+.btn-group {
+  border-radius: 10px;
+  background-color: gray;
+  display: flex;
+  width: fit-content;
+  padding: 10px;
+}
+
+.btn-group > * {
+  margin: 2px;
+}

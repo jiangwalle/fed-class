@@ -1,0 +1,9 @@
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.movie-list > * {
+  margin: 10px 20px;
+}
