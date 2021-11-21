@@ -6,11 +6,14 @@
   color: #ccc;
   text-decoration: none;
   padding: 0 10px;
-  vertical-align: sub;
 }
 
 .menu a:hover {
   text-decoration: underline;
   cursor: pointer;
   color: lightblue;
+}
+
+.theme-toggle {
+  width: 80px;
 }

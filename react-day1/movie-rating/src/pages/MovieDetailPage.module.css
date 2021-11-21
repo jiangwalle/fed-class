@@ -12,3 +12,11 @@
   width: 100px;
   display: inline-block;
 }
+
+.light {
+  background-color: #eee;
+}
+
+.dark {
+  background-color: #555;
+}
