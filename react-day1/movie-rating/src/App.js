@@ -7,6 +7,8 @@ import MovieDetailPage from "./pages/MovieDetailPage";
 import Header from "./components/Header";
 import "./App.css";
 import { ThemeContextProvider } from "./context/ThemeContext";
+import TestPage from "./pages/TestPage";
+import CounterPage from "./pages/CounterPage";
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/movie-detail/:id" element={<MovieDetailPage />} />
+            <Route path="/test" element={<TestPage />} />
+            <Route path="/counter" element={<CounterPage />} />
           </Routes>
         </div>
       </ThemeContextProvider>
