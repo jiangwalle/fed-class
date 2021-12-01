@@ -9,6 +9,9 @@ import "./App.css";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import TestPage from "./pages/TestPage";
 import CounterPage from "./pages/CounterPage";
+import LogoutPage from "./pages/LogoutPage";
+import SignupPage from "./pages/SignupPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
 
@@ -25,6 +28,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/logout" element={<LogoutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/movie-detail/:id" element={<MovieDetailPage />} />
             <Route path="/test" element={<TestPage />} />
             <Route path="/counter" element={<CounterPage />} />

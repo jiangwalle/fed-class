@@ -1,8 +1,8 @@
-import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Switch from "react-switch";
 import { ThemeContext } from "../context/ThemeContext";
+import { isLoggedIn } from "../utils/anthentication";
 import styles from "./Menu.module.css";
 
 class Menu extends Component {
@@ -24,9 +24,10 @@ class Menu extends Component {
     return (
       <div>
         <nav className={styles.menu}>
-          <Link to="/">首页</Link>
+          <Link to="/">电影</Link>
           <Link to="/about">关于豆苗</Link>
-          <Link to="/login">登录</Link>
+          {isLoggedIn() ? <Link to="/logout">退出</Link> : <Link to="/login">登录</Link>}
+          {isLoggedIn() && <Link to="/profile">个人信息</Link>}
           <Switch
             width={70}
             onChange={this.handleChange}
